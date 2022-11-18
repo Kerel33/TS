@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>kalkulator</title>
+	<script type="text/javascript" src="js.js"></script>
+	<link rel="stylesheet" type="text/css" href="st.css">
+</head>
+<body>
+	<div id="d1">
+	<div id="ekran"></div>
+	<input type="button" id="jed" class="num" value="1" onclick="dopisz(1)" onmouseover="zmienstyl1()" onmouseleave="odmienstyl1()">
+	<input type="button" id="dwa" class="num" value="2" onclick="dopisz(2)" onmouseover="zmienstyl2()" onmouseleave="odmienstyl2()">
+	<input type="button" id="trzy" class="num" value="3" onclick="dopisz(3)" onmouseover="zmienstyl3()" onmouseleave="odmienstyl3()">
+	<input type="button" id="plu" class="znak" value="+" onclick="dopisz('+')" onmouseover="zmienstylplu()" onmouseleave="odmienstylplu()"><br>
+	<input type="button" id="czt" class="num" value="4" onclick="dopisz(4)" onmouseover="zmienstyl4()" onmouseleave="odmienstyl4()">
+	<input type="button" id="pie" class="num" value="5" onclick="dopisz(5)" onmouseover="zmienstyl5()" onmouseleave="odmienstyl5()">
+	<input type="button" id="sze" class="num" value="6" onclick="dopisz(6)" onmouseover="zmienstyl6()" onmouseleave="odmienstyl6()">
+	<input type="button" id="min" class="znak" value="-" onclick="dopisz('-')" onmouseover="zmienstylmin()" onmouseleave="odmienstylmin()"><br>
+	<input type="button" id="sie" class="num" value="7" onclick="dopisz(7)" onmouseover="zmienstyl7()" onmouseleave="odmienstyl7()">
+	<input type="button" id="osi" class="num" value="8" onclick="dopisz(8)" onmouseover="zmienstyl8()" onmouseleave="odmienstyl8()">
+	<input type="button" id="dzi" class="num" value="9" onclick="dopisz(9)" onmouseover="zmienstyl9()" onmouseleave="odmienstyl9()">
+	<input type="button" id="raz" class="znak" value="*" onclick="dopisz('*')" onmouseover="zmienstylraz()" onmouseleave="odmienstylraz()"><br>
+	<input type="button" id="dot" class="znak" value="." onclick="dopisz('.')" onmouseover="zmienstyldot()" onmouseleave="odmienstyldot()">
+	<input type="button" id="zer" class="num" value="0" onclick="dopisz(0)" onmouseover="zmienstyl0()" onmouseleave="odmienstyl0()">
+	<input type="button" id="pod" class="znak" value="/" onclick="dopisz('/')" onmouseover="zmienstylpod()" onmouseleave="odmienstylpod()">
+	<input type="button" id="pro" class="znak" value="%" onclick="dopisz('%')" onmouseover="zmienstylpro()" onmouseleave="odmienstylpro()"><br>
+	<input type="button" id="lna" class="znak" value="(" onclick="dopisz('(')" onmouseover="zmienstyllna()" onmouseleave="odmienstyllna()">
+	<input type="button" id="rna" class="znak" value=")" onclick="dopisz(')')" onmouseover="zmienstylrna()" onmouseleave="odmienstylrna()">
+	<input type="button" id="pot" class="znak" value="**" onclick="dopisz('**')" onmouseover="zmienstylpot()" onmouseleave="odmienstylpot()">
+	<input type="button" id="ruw" class="ruw" value="=" onclick="oblicz()" onmouseover="zmienstylruw()" onmouseleave="odmienstylruw()">
+	<input type="button" id="czy" class="c" value="C" onclick="czysc()" onmouseover="zmienstylczy()" onmouseleave="odmienstylczy()">
+</div>
+
+
+</body>
+</html>
+
+
+
+
+
+.num{
+	height: 50px;
+	width: 50px;
+	background-color: beige;
+	margin: 3px;
+	border-radius: 70%;
+}
+
+.znak{
+	height: 50px;
+	width: 50px;
+	background-color: #FFEFD5 ;
+	margin: 3px;
+	border-radius: 70%;
+}
+
+#d1{
+	height: 400px;
+	width: 300px;
+	background-color: gray;
+	position: absolute;
+	border: solid black;
+	margin: 50px;
+	border-radius: 5%;
+}
+
+#ekran{
+	width: 250px;
+	height: 50px;
+	background-color: limegreen;
+	border: solid black;
+	align-content: center;
+	margin: 20px;
+	border-radius: 5%;
+	font-size: 150%;
+}
+
+.ruw{
+	height: 50px;
+	width: 50px;
+	background-color: lightblue;
+	margin: 3px;
+	border-radius: 70%;
+}
+
+.c{
+	height: 50px;
+	width: 50px;
+	background-color: pink;
+	margin: 3px;
+	border-radius: 70%;
+}
+
+
+
+
+function dopisz(znak)
+		{
+			var naEkranie = document.getElementById('ekran').innerText+znak;
+			document.getElementById('ekran').innerText=naEkranie;
+
+		}
+
+		function oblicz()
+		{
+			var naEkranie = document.getElementById("ekran").innerText;
+			var wynik = eval(naEkranie);
+			document.getElementById("ekran").innerText = wynik;
+		}
+
+		function czysc()
+		{
+			document.getElementById("ekran").innerText = "";
+
+		}
+
+		function zmienstyl1(){
+			document.getElementById("jed").style.backgroundColor = "#c2b280"
+		}
+		function zmienstyl2(){
+			document.getElementById("dwa").style.backgroundColor = "#c2b280"
+		}
+		function zmienstyl3(){
+			document.getElementById("trzy").style.backgroundColor = "#c2b280"
+		}
+		function zmienstylplu(){
+			document.getElementById("plu").style.backgroundColor = "#c2b280"
+		}
+		function zmienstyl4(){
+			document.getElementById("czt").style.backgroundColor = "#c2b280"
+		}
+		function zmienstyl5(){
+			document.getElementById("pie").style.backgroundColor = "#c2b280"
+		}
+		function zmienstyl6(){
+			document.getElementById("sze").style.backgroundColor = "#c2b280"
+		}
+		function zmienstylmin(){
+			document.getElementById("min").style.backgroundColor = "#c2b280"
+		}
+		function zmienstyl7(){
+			document.getElementById("sie").style.backgroundColor = "#c2b280"
+		}
+		function zmienstyl8(){
+			document.getElementById("osi").style.backgroundColor = "#c2b280"
+		}
+		function zmienstyl9(){
+			document.getElementById("dzi").style.backgroundColor = "#c2b280"
+		}
+		function zmienstylraz(){
+			document.getElementById("raz").style.backgroundColor = "#c2b280"
+		}
+		function zmienstyldot(){
+			document.getElementById("dot").style.backgroundColor = "#c2b280"
+		}
+		function zmienstyl0(){
+			document.getElementById("zer").style.backgroundColor = "#c2b280"
+		}
+		function zmienstylpod(){
+			document.getElementById("pod").style.backgroundColor = "#c2b280"
+		}
+		function zmienstylpro(){
+			document.getElementById("pro").style.backgroundColor = "#c2b280"
+		}
+		function zmienstyllna(){
+			document.getElementById("lna").style.backgroundColor = "#c2b280"
+		}
+		function zmienstylrna(){
+			document.getElementById("rna").style.backgroundColor = "#c2b280"
+		}
+		function zmienstylpot(){
+			document.getElementById("pot").style.backgroundColor = "#c2b280"
+		}
+		function zmienstylruw(){
+			document.getElementById("ruw").style.backgroundColor = "blue"
+		}
+		function zmienstylczy(){
+			document.getElementById("czy").style.backgroundColor = "red"
+		}
+
+//----------------------------------------------------------------------------------
+
+		function odmienstyl1(){
+			document.getElementById("jed").style.backgroundColor = "beige"
+		}
+		function odmienstyl2(){
+			document.getElementById("dwa").style.backgroundColor = "beige"
+		}
+		function odmienstyl3(){
+			document.getElementById("trzy").style.backgroundColor = "beige"
+		}
+		function odmienstylplu(){
+			document.getElementById("plu").style.backgroundColor = "#FFEFD5"
+		}
+		function odmienstyl4(){
+			document.getElementById("czt").style.backgroundColor = "beige"
+		}
+		function odmienstyl5(){
+			document.getElementById("pie").style.backgroundColor = "beige"
+		}
+		function odmienstyl6(){
+			document.getElementById("sze").style.backgroundColor = "beige"
+		}
+		function odmienstylmin(){
+			document.getElementById("min").style.backgroundColor = "#FFEFD5"
+		}
+		function odmienstyl7(){
+			document.getElementById("sie").style.backgroundColor = "beige"
+		}
+		function odmienstyl8(){
+			document.getElementById("osi").style.backgroundColor = "beige"
+		}
+		function odmienstyl9(){
+			document.getElementById("dzi").style.backgroundColor = "beige"
+		}
+		function odmienstylraz(){
+			document.getElementById("raz").style.backgroundColor = "#FFEFD5"
+		}
+		function odmienstyldot(){
+			document.getElementById("dot").style.backgroundColor = "#FFEFD5"
+		}
+		function odmienstyl0(){
+			document.getElementById("zer").style.backgroundColor = "beige"
+		}
+		function odmienstylpod(){
+			document.getElementById("pod").style.backgroundColor = "#FFEFD5"
+		}
+		function odmienstylpro(){
+			document.getElementById("pro").style.backgroundColor = "#FFEFD5"
+		}
+		function odmienstyllna(){
+			document.getElementById("lna").style.backgroundColor = "#FFEFD5"
+		}
+		function odmienstylrna(){
+			document.getElementById("rna").style.backgroundColor = "#FFEFD5"
+		}
+		function odmienstylpot(){
+			document.getElementById("pot").style.backgroundColor = "#FFEFD5"
+		}
+		function odmienstylruw(){
+			document.getElementById("ruw").style.backgroundColor = "lightblue"
+		}
+		function odmienstylczy(){
+			document.getElementById("czy").style.backgroundColor = "pink"
+		}
